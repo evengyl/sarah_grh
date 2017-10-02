@@ -1,0 +1,1 @@
+<?php echo "Heure Serveur : ".date('d/m/Y H:i:s'); ?>

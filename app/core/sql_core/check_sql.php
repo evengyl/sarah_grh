@@ -1,0 +1,6 @@
+<?
+class check_sql
+{
+
+	
+}
