@@ -11,6 +11,7 @@
 <script type="text/javascript" src="<?= Config::$path_public; ?>/js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="<?= Config::$path_public; ?>/js/animo.js"></script>
 <script type="text/javascript" src="<?= Config::$path_public; ?>/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="<?= Config::$path_public; ?>/js/rappel_ajax.js"></script>
 
 <!--<script type="text/javascript" src="<?= Config::$path_public; ?>/js/renouvel_ajax.js"></script>-->
 
