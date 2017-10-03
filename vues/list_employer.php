@@ -18,6 +18,8 @@ $(document).ready(function(){
         	$( "#table_list_employer" ).html( data_return );
     	});
 	}
+
+	refresh();
 	
 
 	$("#table_list_employer").on('blur', "td[data-action='edit']",function(){
