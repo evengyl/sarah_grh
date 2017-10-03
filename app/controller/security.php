@@ -37,7 +37,7 @@ Class security extends base_module
 		{
 		    if(isset($post["pseudo"]) && isset($post["password"]))
 		    {
-		    	$pseudo = $this->check_post_login($post['pseudo']);
+		    	$pseudo = $this->check_post_login($post['pseudo'], $is_pseudo = 1);
 		    	$password = $this->check_post_login($post['password']);
 
 		    	if(!$pseudo || !$password)
@@ -95,7 +95,7 @@ Class security extends base_module
 		{
 		    if(isset($post["pseudo"]))
 		    {
-		    	$pseudo = $this->user->check_post_login($post['pseudo']);
+		    	$pseudo = $this->user->check_post_login($post['pseudo'], $is_pseudo = 1);
 
 		    	if(!$pseudo)
 		    	{
@@ -141,15 +141,5 @@ Class security extends base_module
 		}
 	}
 
-	public function check_post_login($text)
-	{
-		$text = trim($text);
-		$text = htmlentities($text);
-		$nb_char = strlen($text);
 
-		if($nb_char <= 6)
-			return 0;		
-		else
-			return $text;
-	}
 }

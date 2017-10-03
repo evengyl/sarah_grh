@@ -58,9 +58,23 @@ $(document).ready(function(){
 				type: "POST",
 				data:'id='+current_select.attr("data-id")+'&action=delete',
 				success: function(data_return){
-					 $.post( "../app/controller/controller_ajax/admin_employer.php", {"action":"list"}, function( data_return ){
-                        $( "#table_list_employer" ).html( data_return );
-                    });
+					refresh();
+				}
+	   		});
+		}
+			
+	});
+
+	$("#table_list_employer").on('click', "button[data-action='ajout']", function(){
+		if(confirm("êtes vous sur de vouloir supprimer l'employer de la liste ?"))
+		{
+			var current_select = $(this);
+			$.ajax({
+				url: "../app/controller/controller_ajax/admin_employer.php",
+				type: "POST",
+				data:'id='+current_select.attr("data-id")+'&action=delete',
+				success: function(data_return){
+					refresh();
 				}
 	   		});
 		}

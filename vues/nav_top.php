@@ -19,21 +19,18 @@
 	        	<li><?php echo (isset($_SESSION['level']) && $_SESSION['level'] == '3')?'<a href="?page=admin">Admin</a>' : ''; ?></li>			        
 		        <li><?php echo (!isset($_SESSION['pseudo']))?'<a href="?page=login">Se connecter</a>' : ''; ?></li>
 		        <li><?php echo (isset($_SESSION['pseudo']))?'<a href="?page=list_employer">Liste des employées</a>' : ''; ?></li>
-		        <li><a href="?page=test">Test</a></li>
+		        <li><?php echo (isset($_SESSION['pseudo']))?'<a href="?page=my_account">Mon Compte</a>' : ''; ?></li>
+		        <li><?php echo (isset($_SESSION['level']) && $_SESSION['level'] == '3')?'<a href="?page=test">Test</a>' : ''; ?></li>
 		        <li class="dropdown">
 		          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Un problème ?&nbsp;<span class="caret"></span></a>
 		          <ul class="dropdown-menu">
-		            <li><a href="?page=documentation">Consulter la doc</a></li>
-		            <li><a href="?page=partenaire">Partenaire(s)</a></li>
 		            <li><?php echo (isset($_SESSION['pseudo']))?'<a href="?page=contact">Contactez-moi</a>' : ''; ?></li>
 		          </ul>
 		        </li>
-		        <li><a href="?page=aide">Infos, Aides</a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><?php echo (isset($_SESSION['pseudo']))?'<a href="?page=logout">Se déconnecter</a>' : ''; ?></li>
 		      </ul>
-
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>

@@ -1,5 +1,43 @@
-<div class="col-xs-12 col-xs-12 col-without-padding col-without-radius content_game">
-	<div class="col-lg-6" style="margin-top:1px;"><?
+<? if($_GET['page'] == 'my_account') $_GET['page'] = 'todo';?>
+<div class="col-lg-10 col-lg-offset-1 col-without-padding col-without-radius content_game">
+	<div class="col-lg-2 nav-jeu" style="border-right:1px solid white;">
+		<div class="col-xs-12 col-without-padding">
+			<nav class="navbar">
+				<div class="container-fluid nav_game col-without-padding">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav_game" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div class=" navbar-collapse collapse" id="nav_game">
+					<ul class="nav  nav-stacked ">
+
+						<li class="presentation cl-effect-14"><?
+						if($_GET['page'] == 'password_change') $style_1 = "background-color: #eee; color: grey !important;";
+						else $style_1 = "";?>
+							<a style="<?= $style_1 ?> color:white;" href="?page=password_change">
+								<span class="glyphicon glyphicon-lock"></span>&nbsp;&nbsp;Changer de Mot de passe
+							</a>
+						</li>
+
+						<li class="presentation cl-effect-14"><?
+						if($_GET['page'] == 'todo')	$style_2 = "background-color: #eee; color: grey !important;";
+						else $style_2 = ""?>
+							<a style="<?= $style_2 ?> color:white;" href="?page=todo">
+								<span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Liste de choses à faire
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="col-lg-8" style="margin-top:1px;"><?
 
 		if($_GET['page'] == "password_change")
 		{?>
@@ -30,16 +68,12 @@
 			</form><?
 		}
 
-		else if($_GET['page'] == "mail_box")
+		else if($_GET['page'] == "todo")
 		{?>
-			<div class="col-xs-12 explication pull-left">
-				<h2 class="title">Boite de messageries</h2>
-			</div>
-	
-			__MOD_mail_box__<?
+			__MOD_todo__<?
 		}?>
 	</div>
-	__TPL_nav_my_account__
+	
 </div>
 
 

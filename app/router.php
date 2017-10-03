@@ -46,15 +46,11 @@ Class router
 					$this->is_connect()->assign_mod();
 					break;
 
-				case 'avatar':
-					$this->assign_mod();
-					break;
-
 				case 'password_change':
 					$this->assign_mod('my_account');
 					break;
 
-				case 'mail_box':
+				case 'todo':
 					$this->assign_mod('my_account');
 					break;
 

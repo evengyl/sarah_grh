@@ -25,10 +25,10 @@ Class sign_up extends base_module
 			{
 			    if(isset($post["pseudo"]) && isset($post["password-1"]) && isset($post["password-2"]) && isset($post["email"]))
 			    {
-			    	$pseudo = $this->user->check_post_login($post['pseudo']);
-			    	$password = $this->user->check_post_login($post['password-1']);
-			    	$password_verification = $this->user->check_post_login($post['password-2']);
-			    	$email = $this->user->check_post_login($post['email']);
+			    	$pseudo = $this->check_post_login($post['pseudo'], $is_pseudo = 1);
+			    	$password = $this->check_post_login($post['password-1']);
+			    	$password_verification = $this->check_post_login($post['password-2']);
+			    	$email = $this->check_post_login($post['email']);
 
 			    	if($pseudo == '0'|| $password == '0' || $password_verification == '0' || $email == '0')
 			    	{
@@ -42,7 +42,6 @@ Class sign_up extends base_module
 			    	}
 			    	else
 			    	{
-
 
 			    		$req_sql = new stdClass;
 						$req_sql->table = "login";
@@ -124,7 +123,7 @@ Class sign_up extends base_module
 		$req_sql->var = "id";
 		$req_sql->where = "login = '".$pseudo."'";
 
-		$res_sql = $this->user->select($req_sql);
+		$res_sql = $this->sql->select($req_sql);
 
 		if(!empty($res_sql))
 		{

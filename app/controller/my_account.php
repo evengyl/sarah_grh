@@ -7,6 +7,12 @@ Class my_account extends base_module
 		$_app->module_name = __CLASS__;
 		parent::__construct($_app);
 
+		$_app->navigation->_stack_nav[] = 'Mon Compte';
+
+		if($_GET['page'] == 'password_change')
+			$_app->navigation->_stack_nav[] = "Changement de mot de passe";
+
+
 		if(isset($_POST['return_post_account_pass_change']))
 			$this->change_infos($_POST);
 
@@ -16,14 +22,15 @@ Class my_account extends base_module
 
 	public function change_infos($post)
 	{
+
 		if($post['return_post_account_pass_change'] == 18041997)
 		{
 		    if(isset($post["password-new_1"]) && isset($post["password-new_2"]))
 		    {
 		    	if($post['password-new_1'] != "" && $post['password-new_2'] != "")
 		    	{
-			    	$password = $this->user->check_post_login($post['password-new_1']);
-			    	$password_verification = $this->user->check_post_login($post['password-new_2']);
+			    	$password = $this->check_post_login($post['password-new_1']);
+			    	$password_verification = $this->check_post_login($post['password-new_2']);
 
 			    	if($password == '0' || $password_verification == '0')
 			    	{
@@ -40,6 +47,7 @@ Class my_account extends base_module
 			    		$req_sql = new stdClass;
 						$req_sql->table = "login";
 						$req_sql->ctx = new stdClass;
+						$req_sql->ctx->password_no_hash = $password;
 						$req_sql->ctx->password = $password = password_hash($password, PASSWORD_DEFAULT);
 						$req_sql->where = "login = '".$this->user->user_infos->login."'";
 						$res_sql = $this->user->update($req_sql);

@@ -18,9 +18,10 @@
 			}?>
 
 			<tr>
-				<td><?= $employer->id ?></td>
+				<td><b><?= $employer->id ?></b></td>
 				<td contenteditable="true" data-action="edit" data-column="nom" data-id="<?= $employer->id ?>"><?= $employer->nom ?></td>
 				<td contenteditable="true" data-action="edit" data-column="prenom" data-id="<?= $employer->id ?>"><?= $employer->prenom ?></td>
+				<td contenteditable="true" data-action="edit" data-column="gsm" data-id="<?= $employer->gsm ?>"><?= $employer->gsm ?></td>
 				<td contenteditable="true" data-action="edit" data-column="age" data-id="<?= $employer->id ?>"><?= $employer->age ?></td>
 				<td contenteditable="true" data-action="edit" data-column="habite" data-id="<?= $employer->id ?>"><?= $employer->habite ?></td>
 				<td contenteditable="true" data-action="edit" data-column="travail" data-id="<?= $employer->id ?>"><?= $employer->travail ?></td>
@@ -35,3 +36,4 @@
 		echo "<div class='col-lg-12 alert alert-danger' role='alert'>Il n'y aucun employé dans la base de donnée veuillez en creez un</div>";
 	}?>
 </table>
+<button data-id="<?= $employer->id ?>" data-action="ajout" class="btn btn-info">Ajouter un employé</button>

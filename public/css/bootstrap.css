@@ -3875,6 +3875,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:focus {
   text-decoration: none;
   background-color: #eee;
+  color: grey !important;
 }
 .nav > li.disabled > a {
   color: #777;
@@ -4971,8 +4972,8 @@ a.thumbnail.active {
 }
 .alert-danger {
   color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
+  background-color: #ebccd1;
+  border-color: #a94442;
 }
 .alert-danger hr {
   border-top-color: #e4b9c0;

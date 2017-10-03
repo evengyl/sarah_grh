@@ -83,4 +83,17 @@ Class base_module
 			$this->template_path = "../vues/".$this->template_name.".php";
 
 	}
+
+	public function check_post_login($text, $is_pseudo = 0)
+	{
+		$text = trim($text);
+		$text = htmlentities($text);
+		$nb_char = strlen($text);
+
+		$caractere_min = ($is_pseudo)? 4 : 6;
+		if($nb_char < $caractere_min)
+			return 0;		
+		else
+			return $text;
+	}
 }
