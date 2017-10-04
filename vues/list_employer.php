@@ -22,12 +22,17 @@
 
 						<tr>
 							<td><b><?= $employer->id ?></b></td>
-							<td contenteditable="true" data-action="edit" data-column="nom" data-id="<?= $employer->id ?>"><?= $employer->nom ?></td>
 							<td contenteditable="true" data-action="edit" data-column="prenom" data-id="<?= $employer->id ?>"><?= $employer->prenom ?></td>
+							<td contenteditable="true" data-action="edit" data-column="nom" data-id="<?= $employer->id ?>"><?= $employer->nom ?></td>
 							<td contenteditable="true" data-action="edit" data-column="gsm" data-id="<?= $employer->id ?>"><?= $employer->gsm ?></td>
 							<td contenteditable="true" data-action="edit" data-column="age" data-id="<?= $employer->id ?>"><?= $employer->age ?></td>
 							<td contenteditable="true" data-action="edit" data-column="habite" data-id="<?= $employer->id ?>"><?= $employer->habite ?></td>
 							<td contenteditable="true" data-action="edit" data-column="travail" data-id="<?= $employer->id ?>"><?= $employer->travail ?></td>
+							<td contenteditable="true" data-action="edit" data-column="id_shop_proche_1" data-id="<?= $employer->id ?>"><?= $employer->id_shop_proche_1 ?></td>
+							<td contenteditable="true" data-action="edit" data-column="id_shop_proche_2" data-id="<?= $employer->id ?>"><?= $employer->id_shop_proche_2 ?></td>
+							<td contenteditable="true" data-action="edit" data-column="id_shop_proche_3" data-id="<?= $employer->id ?>"><?= $employer->id_shop_proche_3 ?></td>
+							<td contenteditable="true" data-action="edit" data-column="id_shop_proche_4" data-id="<?= $employer->id ?>"><?= $employer->id_shop_proche_4 ?></td>
+
 
 							<td>
 								<button data-id="<?= $employer->id ?>" data-action="suppression" class="btn btn-danger">Supprimer L'employé</button>
@@ -43,6 +48,13 @@
 		</div>
 	</div>
 </div>
+<?
+foreach($list_shop as $row_shop)
+{
+	?><div class="col-lg-2" style="background:<?= $row_shop->couleur_horraire ?>;"><?= $row_shop->nom ?></div><?
+}
+
+?>
 
 
 
@@ -58,7 +70,7 @@ $(document).ready(function()
 	{
 		$(this).addClass("loading");
 		var current_select = $(this);
-		
+
 		$.ajax({
 			url: "../app/controller/controller_ajax/admin_employer.php",
 			type: "POST",
@@ -105,12 +117,16 @@ $(document).ready(function()
 			$.post("../app/controller/controller_ajax/admin_employer.php", {"action":"get_last_id"}, function( data_return )
 			{
         		$("#table_list_employer").append('<tr><td><b>'+data_return+'</b></td>'+
-												'<td contenteditable="true" data-action="edit" data-column="nom" data-id="'+data_return+'"></td>'+
 												'<td contenteditable="true" data-action="edit" data-column="prenom" data-id="'+data_return+'"></td>'+
+												'<td contenteditable="true" data-action="edit" data-column="nom" data-id="'+data_return+'"></td>'+
 												'<td contenteditable="true" data-action="edit" data-column="gsm" data-id="'+data_return+'"></td>'+
 												'<td contenteditable="true" data-action="edit" data-column="age" data-id="'+data_return+'"></td>'+
 												'<td contenteditable="true" data-action="edit" data-column="habite" data-id="'+data_return+'"></td>'+
 												'<td contenteditable="true" data-action="edit" data-column="travail" data-id="'+data_return+'"></td>'+
+												'<td contenteditable="true" data-action="edit" data-column="id_shop_proche_1" data-id="'+data_return+'"></td>'+
+												'<td contenteditable="true" data-action="edit" data-column="id_shop_proche_2" data-id="'+data_return+'"></td>'+
+												'<td contenteditable="true" data-action="edit" data-column="id_shop_proche_3" data-id="'+data_return+'"></td>'+
+												'<td contenteditable="true" data-action="edit" data-column="id_shop_proche_4" data-id="'+data_return+'"></td>'+
 											'<td></td></tr>');
 
     			//remettre le new block a jour pour ajouter 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 04 Octobre 2017 à 10:56
+-- Généré le :  Mer 04 Octobre 2017 à 16:58
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.21
 
@@ -37,7 +37,11 @@ CREATE TABLE `employer` (
   `habite` varchar(255) NOT NULL,
   `travail` varchar(255) NOT NULL,
   `visible` tinyint(4) NOT NULL,
-  `gsm` varchar(50) NOT NULL
+  `gsm` varchar(50) NOT NULL,
+  `id_shop_proche_1` int(11) NOT NULL,
+  `id_shop_proche_2` int(11) NOT NULL,
+  `id_shop_proche_3` int(11) NOT NULL,
+  `id_shop_proche_4` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -49,15 +53,28 @@ TRUNCATE TABLE `employer`;
 -- Contenu de la table `employer`
 --
 
-INSERT INTO `employer` (`id`, `nom`, `prenom`, `age`, `habite`, `travail`, `visible`, `gsm`) VALUES
-(5, 'loic', 'baudoux', 26, 'labuissiere<br>', 'la louviere', 0, '0497 31 25 23'),
-(6, 'loic', 'baudoux', 26, 'labuissiere', 'la louviere', 0, '0497 31 25 23'),
-(7, 'loic', 'baudoux', 26, 'labuissiere<br>', 'la louviere', 0, '0497 31 25 23'),
-(8, 'loic', 'baudoux de<br>', 26, 'labuissiere ahah<br>', 'la louviere', 1, '0497 31 25 23'),
-(9, 'loic', 'baudoux', 26, 'labuissiere<br>', 'la louviere', 1, '0497 31 25 23'),
-(10, 'loic', 'baudoux', 26, 'labuissiere', 'la louviere', 1, '0497 31 25 23'),
-(11, 'loic', 'baudoux', 26, 'labuissiere<br>', 'la louviere', 1, '0497 31 25 23'),
-(12, 'loic', 'baudoux zd dz<br>', 26, 'labuissiere', 'la louviere', 1, '0497 31 25 23');
+INSERT INTO `employer` (`id`, `nom`, `prenom`, `age`, `habite`, `travail`, `visible`, `gsm`, `id_shop_proche_1`, `id_shop_proche_2`, `id_shop_proche_3`, `id_shop_proche_4`) VALUES
+(1, 'Jalane', 'Jimmy', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
+(2, 'Potloot', 'Thierry', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
+(3, 'TienneBrunne', 'Benoit', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
+(4, 'Andre', 'Emin<br>', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
+(5, 'Raout', 'Thierry', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
+(6, 'Buys', 'Jeremy', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
+(7, 'Bukala', 'Kylian', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
+(8, 'De Roo', 'Alex', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
+(9, 'Chantraine', 'Marcel', 26, '<br>', 'la louvière<br>', 1, '<br>', 0, 0, 0, 0),
+(10, 'Vandenbergh', 'Benoit', 0, '', '', 1, '', 0, 0, 0, 0),
+(11, 'Mineo', 'Massimo', 0, '', '', 1, '', 0, 0, 0, 0),
+(12, 'Non Connu', 'Samuel', 0, '', '', 1, '', 0, 0, 0, 0),
+(13, 'Di Mase', 'Anthony', 0, '', '', 1, '', 0, 0, 0, 0),
+(14, 'Wallon', 'Edwin', 0, '', '', 1, '', 0, 0, 0, 0),
+(15, 'Davaux', 'Dylan', 0, '', '', 1, '', 0, 0, 0, 0),
+(16, 'De Nicoli', 'Pierrot', 0, '', '', 1, '', 0, 0, 0, 0),
+(17, 'Colmant', 'Attilio', 0, '', '', 1, '', 0, 0, 0, 0),
+(18, 'Mabil', 'Michael', 0, '', '', 1, '', 0, 0, 0, 0),
+(19, 'Geers', 'Steve', 0, '', '', 1, '', 0, 0, 0, 0),
+(20, 'Boly', 'Adam', 0, '', '', 1, '', 0, 0, 0, 0),
+(21, 'Prince', 'Frederic', 0, '', '', 1, '', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -90,6 +107,45 @@ INSERT INTO `login` (`id`, `login`, `password`, `last_connect`, `avertissement`,
 (20, 'evengyl', '$2y$10$LMyXpdg11OyYKNOtimiQOOfEABrPA5DOEubnuxvnmOCGiq1Y.BhvS', '1490198511', 0, 'legends', 'dark.evengyl@gmail.com', 3),
 (21, 'evengyleez', '$2y$10$LMyXpdg11OyYKNOtimiQOOfEABrPA5DOEubnuxvnmOCGiq1Y.BhvS', '1490198511', 10, 'legends', 'dark.evengyl@gmail.com', 0),
 (22, 'sarah', '$2y$10$ygzB2J6chpdbxJLClx.Pju7oOpeiCzIGnIigGkBsxtTMuo80VlQG6', '1507020415', 0, '01071987Sa', 'sarahdebevec21@gmail.com', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `shop`
+--
+
+DROP TABLE IF EXISTS `shop`;
+CREATE TABLE `shop` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(50) NOT NULL,
+  `id_responsable` int(11) NOT NULL,
+  `id_employer_1` int(11) NOT NULL,
+  `id_employer_2` int(11) NOT NULL,
+  `couleur_horraire` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Vider la table avant d'insérer `shop`
+--
+
+TRUNCATE TABLE `shop`;
+--
+-- Contenu de la table `shop`
+--
+
+INSERT INTO `shop` (`id`, `nom`, `id_responsable`, `id_employer_1`, `id_employer_2`, `couleur_horraire`) VALUES
+(1, 'Bruxelle', 0, 0, 0, '#ff0000'),
+(2, 'Chatelineau', 0, 0, 0, '#00b050'),
+(3, 'Fleurus', 0, 0, 0, '#808080'),
+(4, 'Hornu', 0, 0, 0, '#e26b0a'),
+(5, 'Bomere', 0, 0, 0, '#4f6228'),
+(6, 'La louvière (cora)', 0, 0, 0, '#ffff00'),
+(7, 'Auchan', 0, 0, 0, '#e6b8b7'),
+(8, 'Le roux', 0, 0, 0, '#b3a2c7'),
+(9, 'Gilly', 0, 0, 0, '#00b0f0'),
+(10, 'La louvière (centre) ', 0, 0, 0, '#ff00ff'),
+(11, 'Ville 2 (charleroi)', 0, 0, 0, '#00ff00'),
+(12, 'CigVapro', 0, 0, 0, '#b8cce4');
 
 -- --------------------------------------------------------
 
@@ -137,7 +193,7 @@ INSERT INTO `todo` (`id`, `id_user`, `todo_title`, `todo_content`, `date`, `visi
 (18, 0, '', 'qzdqzddzdzd<br>', '04-10-2017', 1),
 (19, 0, '', 'sefsef<br>', '04-10-2017', 1),
 (20, 0, '', 'sefs<br>', '04-10-2017', 1),
-(21, 0, 'qd', 'qzd', '', 1),
+(21, 0, 'qd', 'qzd', '04-10-2017', 1),
 (22, 0, '', 'qzdqdqdz', '04-10-2017', 1),
 (23, 0, '', 'qdqdzdqd', '04-10-2017', 1),
 (24, 0, '', 'qdqdqdd', '05-10-2017', 1),
@@ -164,6 +220,12 @@ ALTER TABLE `login`
   ADD KEY `id` (`id`);
 
 --
+-- Index pour la table `shop`
+--
+ALTER TABLE `shop`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `todo`
 --
 ALTER TABLE `todo`
@@ -177,12 +239,17 @@ ALTER TABLE `todo`
 -- AUTO_INCREMENT pour la table `employer`
 --
 ALTER TABLE `employer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT pour la table `login`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+--
+-- AUTO_INCREMENT pour la table `shop`
+--
+ALTER TABLE `shop`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT pour la table `todo`
 --

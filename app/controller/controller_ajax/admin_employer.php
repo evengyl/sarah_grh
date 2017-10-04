@@ -44,7 +44,7 @@ else if($_POST['action'] == 'list')
 {
 	$req_sql = new stdClass;
 	$req_sql->table = "employer";
-	$req_sql->var = "id, nom, prenom, gsm, age, habite, travail";
+	$req_sql->var = "id, nom, prenom, gsm, age, habite, travail, id_shop_proche_1, id_shop_proche_2, id_shop_proche_3, id_shop_proche_4";
 	$req_sql->order = "id";
 	$req_sql->where = "visible = 1";
 	$list_employer = $sql->select($req_sql);
