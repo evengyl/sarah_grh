@@ -1,6 +1,6 @@
 <?php
 session_start();
-require($_SERVER['DOCUMENT_ROOT'].'sarah_grh/app/includes/min_require_for_ajax.php');
+require($_SERVER['DOCUMENT_ROOT'].'/sarah_grh/app/includes/min_require_for_ajax.php');
 
 
 if($_POST['action'] == "delete")
@@ -11,7 +11,6 @@ if($_POST['action'] == "delete")
 	$req_sql->ctx = new stdClass();
 	$req_sql->ctx->visible = 0;
 	$req_sql->where = "id = ".$_POST['id'];
-	affiche_pre($req_sql);
 	$sql->update($req_sql);	
 }
 else if($_POST['action'] == 'edit')
@@ -55,7 +54,7 @@ else if($_POST['action'] == 'list')
 
 
 	ob_start();
-		include $_SERVER['DOCUMENT_ROOT'].'sarah_grh/vues/appel_ajax/todo_list.php';
+		include $_SERVER['DOCUMENT_ROOT'].'/sarah_grh/vues/appel_ajax/todo_list.php';
 	$return = ob_get_clean();
 
 	echo ($return);

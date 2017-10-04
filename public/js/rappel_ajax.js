@@ -10,9 +10,6 @@ $(document).ready(function()
     	});
 	}
 
-	refresh("#todo_list", "../app/controller/controller_ajax/admin_todo_list.php");
-	refresh("#table_list_employer", "../app/controller/controller_ajax/admin_employer.php");
-	
 
 	$("#table_list_employer").on('blur', "td[data-action='edit']",function()
 	{
@@ -53,7 +50,7 @@ $(document).ready(function()
 				type: "POST",
 				data:'id='+current_select.attr("data-id")+'&action=delete',
 				success: function(data_return){
-					refresh_employer();
+					refresh("#table_list_employer", "../app/controller/controller_ajax/admin_employer.php");
 				}
 	   		});
 		}
@@ -70,7 +67,7 @@ $(document).ready(function()
 				type: "POST",
 				data:'id='+current_select.attr("data-id")+'&action=delete',
 				success: function(data_return){
-					refresh_employer();
+					refresh("#table_list_employer", "../app/controller/controller_ajax/admin_employer.php");
 				}
 	   		});
 		}
@@ -95,7 +92,7 @@ $(document).ready(function()
 				current_select.addClass("validate").delay(1000).queue(function(next){
 					current_select.removeClass("validate");
 					next();
-					refresh_todo();
+					refresh("#todo_list", "../app/controller/controller_ajax/admin_todo_list.php");
 				});
 			}        
 	   });
@@ -112,7 +109,7 @@ $(document).ready(function()
 				type: "POST",
 				data:'id='+current_select.attr("data-id")+'&action=delete',
 				success: function(data_return){
-					refresh_todo();
+					refresh("#todo_list", "../app/controller/controller_ajax/admin_todo_list.php");
 				}
 	   		});
 		}

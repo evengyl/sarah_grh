@@ -1,6 +1,5 @@
 <?php
-
-require($_SERVER['DOCUMENT_ROOT'].'sarah_grh/app/includes/min_require_for_ajax.php');
+require($_SERVER['DOCUMENT_ROOT'].'/sarah_grh/app/includes/min_require_for_ajax.php');
 
 
 if($_POST['action'] == "delete")
@@ -36,7 +35,7 @@ else if($_POST['action'] == 'list')
 
 
 	ob_start();
-		include $_SERVER['DOCUMENT_ROOT'].'sarah_grh/vues/appel_ajax/list_table_employer.php';
+		include $_SERVER['DOCUMENT_ROOT'].'/sarah_grh/vues/appel_ajax/list_table_employer.php';
 	$return = ob_get_clean();
 
 	echo ($return);
