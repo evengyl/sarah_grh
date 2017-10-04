@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 03 Octobre 2017 à 16:05
+-- Généré le :  Mer 04 Octobre 2017 à 10:56
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.21
 
@@ -53,11 +53,11 @@ INSERT INTO `employer` (`id`, `nom`, `prenom`, `age`, `habite`, `travail`, `visi
 (5, 'loic', 'baudoux', 26, 'labuissiere<br>', 'la louviere', 0, '0497 31 25 23'),
 (6, 'loic', 'baudoux', 26, 'labuissiere', 'la louviere', 0, '0497 31 25 23'),
 (7, 'loic', 'baudoux', 26, 'labuissiere<br>', 'la louviere', 0, '0497 31 25 23'),
-(8, 'loic', 'baudoux', 26, 'labuissiere ahah<br>', 'la louviere', 1, '0497 31 25 23'),
+(8, 'loic', 'baudoux de<br>', 26, 'labuissiere ahah<br>', 'la louviere', 1, '0497 31 25 23'),
 (9, 'loic', 'baudoux', 26, 'labuissiere<br>', 'la louviere', 1, '0497 31 25 23'),
 (10, 'loic', 'baudoux', 26, 'labuissiere', 'la louviere', 1, '0497 31 25 23'),
 (11, 'loic', 'baudoux', 26, 'labuissiere<br>', 'la louviere', 1, '0497 31 25 23'),
-(12, 'loic', 'baudoux', 26, 'labuissiere', 'la louviere', 1, '0497 31 25 23');
+(12, 'loic', 'baudoux zd dz<br>', 26, 'labuissiere', 'la louviere', 1, '0497 31 25 23');
 
 -- --------------------------------------------------------
 
@@ -103,6 +103,7 @@ CREATE TABLE `todo` (
   `id_user` int(11) NOT NULL,
   `todo_title` varchar(255) NOT NULL,
   `todo_content` text NOT NULL,
+  `date` varchar(15) NOT NULL,
   `visible` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -115,12 +116,34 @@ TRUNCATE TABLE `todo`;
 -- Contenu de la table `todo`
 --
 
-INSERT INTO `todo` (`id`, `id_user`, `todo_title`, `todo_content`, `visible`) VALUES
-(1, 22, 'test', 'test test test test test test test test ', 0),
-(2, 22, 'test', 'test test test test test test test test ', 0),
-(3, 0, '', 'qzdqzddzdzd<br>', 0),
-(4, 0, '', 'sefsef<br>', 1),
-(5, 0, '', 'sefs<br>', 1);
+INSERT INTO `todo` (`id`, `id_user`, `todo_title`, `todo_content`, `date`, `visible`) VALUES
+(1, 22, 'test', 'test test test test test test test test ', '05-10-2017', 0),
+(2, 22, 'test', 'test test test test test test test test ', '05-10-2017', 0),
+(3, 0, '', 'qzdqzddzdzd<br>', '05-10-2017', 0),
+(4, 0, '', 'sefsef<br>', '05-10-2017', 1),
+(5, 0, '', 'sefs<br>', '05-10-2017', 1),
+(6, 22, 'test', 'test test test test test test test test ', '05-10-2017', 1),
+(7, 22, 'test', 'test test test test test test test test ', '03-10-2017', 1),
+(8, 0, '', 'qzdqzddzdzd<br>', '03-10-2017', 1),
+(9, 0, '', 'sefsef<br>', '03-10-2017', 1),
+(10, 0, '', 'sefs<br>', '03-10-2017', 1),
+(11, 22, 'test', 'test test test test test test test test ', '03-10-2017', 1),
+(12, 22, 'test', 'test test test test test test test test ', '04-10-2017', 0),
+(13, 0, '', 'qzdqzddzdzd<br>', '04-10-2017', 1),
+(14, 0, '', 'sefsef<br>', '04-10-2017', 1),
+(15, 0, '', 'sefs<br>', '04-10-2017', 1),
+(16, 22, 'test', 'test test test test test test test test ', '04-10-2017', 1),
+(17, 22, 'test', 'test test test test test test test test ', '04-10-2017', 1),
+(18, 0, '', 'qzdqzddzdzd<br>', '04-10-2017', 1),
+(19, 0, '', 'sefsef<br>', '04-10-2017', 1),
+(20, 0, '', 'sefs<br>', '04-10-2017', 1),
+(21, 0, 'qd', 'qzd', '', 1),
+(22, 0, '', 'qzdqdqdz', '04-10-2017', 1),
+(23, 0, '', 'qdqdzdqd', '04-10-2017', 1),
+(24, 0, '', 'qdqdqdd', '05-10-2017', 1),
+(25, 0, '', 'qzdqzd', '04-10-2017', 1),
+(26, 0, '', 'qdqdzd<br>', '06-10-2017', 1),
+(27, 0, 'fefef', 'qdqzdqd<br>', '07-10-2017', 1);
 
 --
 -- Index pour les tables exportées
@@ -159,12 +182,12 @@ ALTER TABLE `employer`
 -- AUTO_INCREMENT pour la table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT pour la table `todo`
 --
 ALTER TABLE `todo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
