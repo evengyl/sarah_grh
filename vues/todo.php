@@ -42,16 +42,29 @@
 
 
 <script>
+	//mise en route du calendrier
 	$( "#date_picker" ).datepicker();
 	$( "#date_picker" ).datepicker( "option", "yearRange", "2000:2050" );
 	$( "#date_picker" ).datepicker( "option", "weekHeader", "N° Semaine" );
 	$( "#date_picker" ).datepicker( "option", "dateFormat", "dd-mm-yy" );
 
+	
+
 
 	$(document).ready(function()
 	{
+		//attribution des pastile de couleur pour chaque date sur le calendirer
+		   <?php
+		        $list = '"'.implode('","',$list_date).'"';
+		    ?>
+		    var list_date = new Array(<?php echo $list ?>);
+    	//en pause car pas d'idée pour mettre la petit puce sur les jours 
+
+
+		//dès que l'on change de date on envoi la date par ajax pour recuperer la liste des todo du jour selctionner
 		$("#date_picker").on('change', function(){
-			console.log($('#date_picker')[0].value);	
+			console.log($('#date_picker')[0].value);
+
 
 			$.post("../app/controller/controller_ajax/admin_todo_list.php", {"action":"list_with_date", "current_select_date":$('#date_picker')[0].value}, function( data_return )
 			{

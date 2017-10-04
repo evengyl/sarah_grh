@@ -1,6 +1,6 @@
 <?php
 session_start();
-require($_SERVER['DOCUMENT_ROOT'].'/sarah_grh/app/includes/min_require_for_ajax.php');
+require(dirname(dirname(dirname(dirname(__FILE__)))).'/app/includes/min_require_for_ajax.php');
 
 
 if($_POST['action'] == "delete")
@@ -15,7 +15,6 @@ if($_POST['action'] == "delete")
 }
 else if($_POST['action'] == 'edit')
 {
-	affiche_pre($_POST);
 	//pour ajouter une ligne on va viérfier pour le reste qu'elle n'existe pas
 	//donc comme ça on appel que edit même pour ajouter une ligne dans la base
 	$req_sql = new stdClass();
@@ -57,7 +56,7 @@ else if($_POST['action'] == 'list_with_date')
 	$list_todo = $sql->select($req_sql);
 
 	ob_start();
-		include $_SERVER['DOCUMENT_ROOT'].'/sarah_grh/vues/appel_ajax/todo_list.php';
+		include dirname(dirname(dirname(dirname(__FILE__)))).'/vues/appel_ajax/todo_list.php';
 	$return = ob_get_clean();
 	echo ($return);
 }

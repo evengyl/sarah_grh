@@ -1,5 +1,5 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'].'/sarah_grh/app/includes/min_require_for_ajax.php');
+require(dirname(dirname(dirname(dirname(__FILE__)))).'/app/includes/min_require_for_ajax.php');
 
 
 if($_POST['action'] == "delete")
@@ -14,13 +14,30 @@ if($_POST['action'] == "delete")
 }
 else if($_POST['action'] == 'edit')
 {
+	//pour ajouter une ligne on va viérfier pour le reste qu'elle n'existe pas
+	//donc comme ça on appel que edit même pour ajouter une ligne dans la base
+	$req_sql = new stdClass();
+	$req_sql->table = "employer";
+	$req_sql->var = "id";
+	$req_sql->where = "id = ".$_POST['id'];
+	$last_todo = $sql->select($req_sql);
 
+	if(empty($last_todo))
+	{
+
+		$req_sql = new stdClass();
+		$req_sql->table = 'employer';
+		$req_sql->ctx = new stdClass();
+		$req_sql->ctx->{$_POST["column"]} = $_POST['editval'];
+		$req_sql->ctx->visible = 1;
+		$sql->insert_into($req_sql);
+	}
+affiche_pre($_POST);
 	$req_sql = new stdClass();
 	$req_sql->table = 'employer';
 	$req_sql->ctx = new stdClass();
 	$req_sql->ctx->{$_POST["column"]} = $_POST['editval'];
 	$req_sql->where = "id = ".$_POST['id'];
-
 	$sql->update($req_sql);
 }
 else if($_POST['action'] == 'list')
@@ -35,10 +52,20 @@ else if($_POST['action'] == 'list')
 
 
 	ob_start();
-		include $_SERVER['DOCUMENT_ROOT'].'/sarah_grh/vues/appel_ajax/list_table_employer.php';
+		include dirname(dirname(dirname(dirname(__FILE__)))).'/vues/appel_ajax/list_table_employer.php';
 	$return = ob_get_clean();
 
 	echo ($return);
+}
+
+else if($_POST['action'] == "get_last_id")
+{
+	$req_sql = new stdClass();
+	$req_sql->table = "employer";
+	$req_sql->var = "id";
+	$req_sql->order = "id DESC";
+	$id = $sql->select($req_sql);
+	echo $id[0]->id+1;
 }
 
 ?>
