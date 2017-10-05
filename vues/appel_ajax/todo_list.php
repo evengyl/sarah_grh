@@ -25,6 +25,6 @@
 		echo "<div class='col-lg-12 alert alert-danger' role='alert'>Il n'y plus rien à faire pour le moment à cette date ci</div>";
 	}?>
 </table>
-<button data-action="ajout" class="btn btn-info">Ajouter une chose à faire</button>
-<div style="width:10%; padding:5px; margin-right:15px; float:left;" class="alert alert-success" role="alert">à Faire</div>
-<div style="width:10%; padding:5px; float:left;" class="alert alert-danger" role="alert">Déjà faite</div>
+<button class="col-lg-3 alert btn btn-info" style="padding:5px; cursor:pointer;" data-action="ajout">Ajouter une chose à faire</button>
+<div class="col-lg-2 pull-right alert alert-success" style="padding:5px;"  role="alert">à Faire</div>
+<div class="col-lg-2 pull-right alert alert-danger" style="padding:5px;" role="alert">Déjà faite</div>
