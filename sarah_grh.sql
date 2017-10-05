@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 04 Octobre 2017 à 16:58
+-- Généré le :  Jeu 05 Octobre 2017 à 17:04
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.21
 
@@ -54,19 +54,19 @@ TRUNCATE TABLE `employer`;
 --
 
 INSERT INTO `employer` (`id`, `nom`, `prenom`, `age`, `habite`, `travail`, `visible`, `gsm`, `id_shop_proche_1`, `id_shop_proche_2`, `id_shop_proche_3`, `id_shop_proche_4`) VALUES
-(1, 'Jalane', 'Jimmy', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
-(2, 'Potloot', 'Thierry', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
-(3, 'TienneBrunne', 'Benoit', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
-(4, 'Andre', 'Emin<br>', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
-(5, 'Raout', 'Thierry', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
-(6, 'Buys', 'Jeremy', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
-(7, 'Bukala', 'Kylian', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
-(8, 'De Roo', 'Alex', 26, '<br>', 'la louviere', 1, '<br>', 0, 0, 0, 0),
-(9, 'Chantraine', 'Marcel', 26, '<br>', 'la louvière<br>', 1, '<br>', 0, 0, 0, 0),
+(1, 'Jalane', 'Jimmy', 0, '<br>', '<br>', 1, '<br>', 1, 1, 9, 8),
+(2, 'Potloot', 'Thierry', 0, '<br>', '<br>', 1, '<br>', 2, 1, 1, 0),
+(3, 'TienneBrunne', 'Benoit', 0, '<br>', '<br>', 1, '<br>', 1, 0, 0, 6),
+(4, 'Andre', 'Emin<br>', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
+(5, 'Raout', 'Thierry', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
+(6, 'Buys', 'Jeremy', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
+(7, 'Bukala', 'Kylian', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 8),
+(8, 'De Roo', 'Alex', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
+(9, 'Chantraine', 'Marcel', 0, '<br>', '<br>', 1, '<br>', 0, 0, 6, 0),
 (10, 'Vandenbergh', 'Benoit', 0, '', '', 1, '', 0, 0, 0, 0),
 (11, 'Mineo', 'Massimo', 0, '', '', 1, '', 0, 0, 0, 0),
 (12, 'Non Connu', 'Samuel', 0, '', '', 1, '', 0, 0, 0, 0),
-(13, 'Di Mase', 'Anthony', 0, '', '', 1, '', 0, 0, 0, 0),
+(13, 'Di Mase', 'Anthony', 0, '<br>', '', 1, '', 0, 0, 0, 0),
 (14, 'Wallon', 'Edwin', 0, '', '', 1, '', 0, 0, 0, 0),
 (15, 'Davaux', 'Dylan', 0, '', '', 1, '', 0, 0, 0, 0),
 (16, 'De Nicoli', 'Pierrot', 0, '', '', 1, '', 0, 0, 0, 0),
@@ -173,11 +173,11 @@ TRUNCATE TABLE `todo`;
 --
 
 INSERT INTO `todo` (`id`, `id_user`, `todo_title`, `todo_content`, `date`, `visible`) VALUES
-(1, 22, 'test', 'test test test test test test test test ', '05-10-2017', 0),
+(1, 22, 'test', 'test test test test test test test test5555', '05-10-2017', 0),
 (2, 22, 'test', 'test test test test test test test test ', '05-10-2017', 0),
 (3, 0, '', 'qzdqzddzdzd<br>', '05-10-2017', 0),
-(4, 0, '', 'sefsef<br>', '05-10-2017', 1),
-(5, 0, '', 'sefs<br>', '05-10-2017', 1),
+(4, 0, '', 'sefsef452<br>', '05-10-2017', 1),
+(5, 0, '', 'sefs452452<br>', '05-10-2017', 1),
 (6, 22, 'test', 'test test test test test test test test ', '05-10-2017', 1),
 (7, 22, 'test', 'test test test test test test test test ', '03-10-2017', 1),
 (8, 0, '', 'qzdqzddzdzd<br>', '03-10-2017', 1),
@@ -196,7 +196,7 @@ INSERT INTO `todo` (`id`, `id_user`, `todo_title`, `todo_content`, `date`, `visi
 (21, 0, 'qd', 'qzd', '04-10-2017', 1),
 (22, 0, '', 'qzdqdqdz', '04-10-2017', 1),
 (23, 0, '', 'qdqdzdqd', '04-10-2017', 1),
-(24, 0, '', 'qdqdqdd', '05-10-2017', 1),
+(24, 0, '', 'qdqdqdd42452', '05-10-2017', 1),
 (25, 0, '', 'qzdqzd', '04-10-2017', 1),
 (26, 0, '', 'qdqdzd<br>', '06-10-2017', 1),
 (27, 0, 'fefef', 'qdqzdqd<br>', '07-10-2017', 1);
@@ -239,7 +239,7 @@ ALTER TABLE `todo`
 -- AUTO_INCREMENT pour la table `employer`
 --
 ALTER TABLE `employer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT pour la table `login`
 --
