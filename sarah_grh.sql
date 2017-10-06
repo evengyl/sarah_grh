@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 05 Octobre 2017 à 17:04
+-- Généré le :  Ven 06 Octobre 2017 à 13:53
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.21
 
@@ -32,7 +32,6 @@ DROP TABLE IF EXISTS `employer`;
 CREATE TABLE `employer` (
   `id` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
-  `prenom` varchar(50) NOT NULL,
   `age` tinyint(4) NOT NULL,
   `habite` varchar(255) NOT NULL,
   `travail` varchar(255) NOT NULL,
@@ -53,28 +52,59 @@ TRUNCATE TABLE `employer`;
 -- Contenu de la table `employer`
 --
 
-INSERT INTO `employer` (`id`, `nom`, `prenom`, `age`, `habite`, `travail`, `visible`, `gsm`, `id_shop_proche_1`, `id_shop_proche_2`, `id_shop_proche_3`, `id_shop_proche_4`) VALUES
-(1, 'Jalane', 'Jimmy', 0, '<br>', '<br>', 1, '<br>', 1, 1, 9, 8),
-(2, 'Potloot', 'Thierry', 0, '<br>', '<br>', 1, '<br>', 2, 1, 1, 0),
-(3, 'TienneBrunne', 'Benoit', 0, '<br>', '<br>', 1, '<br>', 1, 0, 0, 6),
-(4, 'Andre', 'Emin<br>', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
-(5, 'Raout', 'Thierry', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
-(6, 'Buys', 'Jeremy', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
-(7, 'Bukala', 'Kylian', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 8),
-(8, 'De Roo', 'Alex', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
-(9, 'Chantraine', 'Marcel', 0, '<br>', '<br>', 1, '<br>', 0, 0, 6, 0),
-(10, 'Vandenbergh', 'Benoit', 0, '', '', 1, '', 0, 0, 0, 0),
-(11, 'Mineo', 'Massimo', 0, '', '', 1, '', 0, 0, 0, 0),
-(12, 'Non Connu', 'Samuel', 0, '', '', 1, '', 0, 0, 0, 0),
-(13, 'Di Mase', 'Anthony', 0, '<br>', '', 1, '', 0, 0, 0, 0),
-(14, 'Wallon', 'Edwin', 0, '', '', 1, '', 0, 0, 0, 0),
-(15, 'Davaux', 'Dylan', 0, '', '', 1, '', 0, 0, 0, 0),
-(16, 'De Nicoli', 'Pierrot', 0, '', '', 1, '', 0, 0, 0, 0),
-(17, 'Colmant', 'Attilio', 0, '', '', 1, '', 0, 0, 0, 0),
-(18, 'Mabil', 'Michael', 0, '', '', 1, '', 0, 0, 0, 0),
-(19, 'Geers', 'Steve', 0, '', '', 1, '', 0, 0, 0, 0),
-(20, 'Boly', 'Adam', 0, '', '', 1, '', 0, 0, 0, 0),
-(21, 'Prince', 'Frederic', 0, '', '', 1, '', 0, 0, 0, 0);
+INSERT INTO `employer` (`id`, `nom`, `age`, `habite`, `travail`, `visible`, `gsm`, `id_shop_proche_1`, `id_shop_proche_2`, `id_shop_proche_3`, `id_shop_proche_4`) VALUES
+(1, 'Jimmy Jalane', 0, '<br>', '<br>', 1, '<br>', 1, 1, 9, 8),
+(2, 'Thierry Potloot', 0, '<br>', '<br>', 1, '<br>', 2, 1, 1, 0),
+(3, 'Benoit TienneBrunne', 0, '<br>', '<br>', 1, '<br>', 1, 0, 0, 6),
+(4, 'Emin Andre', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
+(5, 'Thierry Raout', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
+(6, 'Jeremy Buys', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
+(7, 'Kylian Bukala', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 8),
+(8, 'Alex De Roo', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
+(9, 'Marcel Chantraine', 0, '<br>', '<br>', 1, '<br>', 0, 0, 6, 0),
+(10, 'Benoit Vandenbergh', 0, '', '', 1, '', 0, 0, 0, 0),
+(11, 'Massimo Mineo', 0, '', '', 1, '', 0, 0, 0, 0),
+(12, 'Samuel', 0, '', '', 1, '', 0, 0, 0, 0),
+(13, 'Anthony Di Mase', 0, '<br>', '', 1, '', 0, 0, 0, 0),
+(14, 'Edwin Wallon', 0, '', '', 1, '', 0, 0, 0, 0),
+(15, 'Dylan Davaux', 0, '', '', 1, '', 0, 0, 0, 0),
+(16, 'Pierrot De Nicoli', 0, '', '', 1, '', 0, 0, 0, 0),
+(17, 'Attilio Colmant', 0, '', '', 1, '', 0, 0, 0, 0),
+(18, 'Michael Mabil', 0, '', '', 1, '', 0, 0, 0, 0),
+(19, 'Steve Geers', 0, '', '', 1, '', 0, 0, 0, 0),
+(20, 'Adam Boly', 0, '', '', 1, '', 0, 0, 0, 0),
+(21, 'Frederic Prince', 0, '', '', 1, '', 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `horraire_id_shop`
+--
+
+DROP TABLE IF EXISTS `horraire_id_shop`;
+CREATE TABLE `horraire_id_shop` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `lundi` int(11) NOT NULL,
+  `mardi` int(11) NOT NULL,
+  `mercredi` int(11) NOT NULL,
+  `jeudi` int(11) NOT NULL,
+  `vendredi` int(11) NOT NULL,
+  `samedi` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Vider la table avant d'insérer `horraire_id_shop`
+--
+
+TRUNCATE TABLE `horraire_id_shop`;
+--
+-- Contenu de la table `horraire_id_shop`
+--
+
+INSERT INTO `horraire_id_shop` (`id`, `id_user`, `lundi`, `mardi`, `mercredi`, `jeudi`, `vendredi`, `samedi`) VALUES
+(1, 1, 1, 2, 3, 4, 5, 6),
+(2, 2, 2, 5, 6, 4, 7, 8);
 
 -- --------------------------------------------------------
 
@@ -213,6 +243,12 @@ ALTER TABLE `employer`
   ADD KEY `id` (`id`);
 
 --
+-- Index pour la table `horraire_id_shop`
+--
+ALTER TABLE `horraire_id_shop`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `login`
 --
 ALTER TABLE `login`
@@ -239,7 +275,12 @@ ALTER TABLE `todo`
 -- AUTO_INCREMENT pour la table `employer`
 --
 ALTER TABLE `employer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT pour la table `horraire_id_shop`
+--
+ALTER TABLE `horraire_id_shop`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `login`
 --
