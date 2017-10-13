@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 06 Octobre 2017 à 13:53
+-- Généré le :  Ven 13 Octobre 2017 à 15:04
 -- Version du serveur :  10.1.13-MariaDB
 -- Version de PHP :  5.6.21
 
@@ -36,11 +36,7 @@ CREATE TABLE `employer` (
   `habite` varchar(255) NOT NULL,
   `travail` varchar(255) NOT NULL,
   `visible` tinyint(4) NOT NULL,
-  `gsm` varchar(50) NOT NULL,
-  `id_shop_proche_1` int(11) NOT NULL,
-  `id_shop_proche_2` int(11) NOT NULL,
-  `id_shop_proche_3` int(11) NOT NULL,
-  `id_shop_proche_4` int(11) NOT NULL
+  `gsm` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -52,28 +48,28 @@ TRUNCATE TABLE `employer`;
 -- Contenu de la table `employer`
 --
 
-INSERT INTO `employer` (`id`, `nom`, `age`, `habite`, `travail`, `visible`, `gsm`, `id_shop_proche_1`, `id_shop_proche_2`, `id_shop_proche_3`, `id_shop_proche_4`) VALUES
-(1, 'Jimmy Jalane', 0, '<br>', '<br>', 1, '<br>', 1, 1, 9, 8),
-(2, 'Thierry Potloot', 0, '<br>', '<br>', 1, '<br>', 2, 1, 1, 0),
-(3, 'Benoit TienneBrunne', 0, '<br>', '<br>', 1, '<br>', 1, 0, 0, 6),
-(4, 'Emin Andre', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
-(5, 'Thierry Raout', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
-(6, 'Jeremy Buys', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
-(7, 'Kylian Bukala', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 8),
-(8, 'Alex De Roo', 0, '<br>', '<br>', 1, '<br>', 0, 0, 0, 0),
-(9, 'Marcel Chantraine', 0, '<br>', '<br>', 1, '<br>', 0, 0, 6, 0),
-(10, 'Benoit Vandenbergh', 0, '', '', 1, '', 0, 0, 0, 0),
-(11, 'Massimo Mineo', 0, '', '', 1, '', 0, 0, 0, 0),
-(12, 'Samuel', 0, '', '', 1, '', 0, 0, 0, 0),
-(13, 'Anthony Di Mase', 0, '<br>', '', 1, '', 0, 0, 0, 0),
-(14, 'Edwin Wallon', 0, '', '', 1, '', 0, 0, 0, 0),
-(15, 'Dylan Davaux', 0, '', '', 1, '', 0, 0, 0, 0),
-(16, 'Pierrot De Nicoli', 0, '', '', 1, '', 0, 0, 0, 0),
-(17, 'Attilio Colmant', 0, '', '', 1, '', 0, 0, 0, 0),
-(18, 'Michael Mabil', 0, '', '', 1, '', 0, 0, 0, 0),
-(19, 'Steve Geers', 0, '', '', 1, '', 0, 0, 0, 0),
-(20, 'Adam Boly', 0, '', '', 1, '', 0, 0, 0, 0),
-(21, 'Frederic Prince', 0, '', '', 1, '', 0, 0, 0, 0);
+INSERT INTO `employer` (`id`, `nom`, `age`, `habite`, `travail`, `visible`, `gsm`) VALUES
+(1, 'Jimmy Jalane', 0, '<br>', '<br>', 1, '<br>'),
+(2, 'Thierry Potloot', 0, '<br>', '<br>', 1, '<br>'),
+(3, 'Benoit TienneBrunne', 0, '<br>', '<br>', 1, '<br>'),
+(4, 'Emin Andre', 0, '<br>', '<br>', 1, '<br>'),
+(5, 'Thierry Raout', 0, '<br>', '<br>', 1, '<br>'),
+(6, 'Jeremy Buys', 0, '<br>', '<br>', 1, '<br>'),
+(7, 'Kylian Bukala', 0, '<br>', '<br>', 1, '<br>'),
+(8, 'Alex De Roo', 0, '<br>', '<br>', 1, '<br>'),
+(9, 'Marcel Chantraine', 0, '<br>', '<br>', 1, '<br>'),
+(10, 'Benoit Vandenbergh', 0, '', '', 1, ''),
+(11, 'Massimo Mineo', 0, '', '', 1, ''),
+(12, 'Samuel', 0, '', '', 1, ''),
+(13, 'Anthony Di Mase', 0, '<br>', '', 1, ''),
+(14, 'Edwin Wallon', 0, '', '', 1, ''),
+(15, 'Dylan Davaux', 0, '', '', 1, ''),
+(16, 'Pierrot De Nicoli', 0, '', '', 1, ''),
+(17, 'Attilio Colmant', 0, '', '', 1, ''),
+(18, 'Michael Mabil', 0, '', '', 1, ''),
+(19, 'Steve Geers', 0, '', '', 1, ''),
+(20, 'Adam Boly', 0, '', '', 1, ''),
+(21, 'Frederic Prince', 0, '', '', 1, '');
 
 -- --------------------------------------------------------
 
@@ -103,8 +99,27 @@ TRUNCATE TABLE `horraire_id_shop`;
 --
 
 INSERT INTO `horraire_id_shop` (`id`, `id_user`, `lundi`, `mardi`, `mercredi`, `jeudi`, `vendredi`, `samedi`) VALUES
-(1, 1, 1, 2, 3, 4, 5, 6),
-(2, 2, 2, 5, 6, 4, 7, 8);
+(1, 1, 1, 2, 3, 4, 0, 6),
+(2, 2, 2, 5, 6, 4, 0, 8),
+(3, 3, 1, 2, 3, 0, 5, 6),
+(4, 4, 0, 5, 6, 4, 1, 8),
+(5, 5, 1, 1, 6, 0, 4, 6),
+(6, 6, 2, 1, 0, 0, 7, 8),
+(7, 7, 1, 1, 3, 0, 1, 6),
+(8, 8, 2, 1, 6, 0, 56, 8),
+(9, 9, 1, 1, 3, 6, 9, 1),
+(10, 10, 2, 5, 6, 1, 7, 8),
+(11, 11, 1, 2, 3, 4, 5, 6),
+(12, 12, 2, 5, 6, 4, 7, 8),
+(13, 13, 1, 2, 3, 4, 12, 6),
+(14, 14, 2, 5, 6, 4, 7, 8),
+(15, 15, 1, 2, 3, 4, 5, 6),
+(16, 16, 2, 5, 5, 4, 7, 8),
+(17, 17, 2, 5, 6, 4, 7, 8),
+(18, 18, 1, 2, 3, 4, 5, 6),
+(19, 19, 2, 5, 6, 4, 7, 8),
+(20, 20, 1, 2, 3, 4, 5, 6),
+(21, 21, 2, 5, 6, 4, 7, 8);
 
 -- --------------------------------------------------------
 
@@ -280,7 +295,7 @@ ALTER TABLE `employer`
 -- AUTO_INCREMENT pour la table `horraire_id_shop`
 --
 ALTER TABLE `horraire_id_shop`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT pour la table `login`
 --
