@@ -1,18 +1,20 @@
 <?
+$base_dir = dirname(dirname(dirname(__FILE__)));
 $_app = new stdClass();
 
-require_once "../app/core/tools.php";
 
-require_once "../app/modele/Config.php";
+require_once $base_dir."/app/core/tools.php";
+
+require_once $base_dir."/app/modele/Config.php";
 
 Config::set_config_base();
 
-require_once "../app/core/sql_core/create_sql.php";
-require_once "../app/core/sql_core/check_sql.php";
-require_once '../app/core/load_class.php'; 
+require_once $base_dir."/app/core/sql_core/create_sql.php";
+require_once $base_dir."/app/core/sql_core/check_sql.php";
+require_once $base_dir.'/app/core/load_class.php'; 
 
 
-require_once "../app/includes/navigation.php";
+require_once $base_dir."/app/includes/navigation.php";
 
 $_app->navigation = new navigation();
 

@@ -6,7 +6,7 @@ class Config
     public static $user = "root";
     public static $Mpass = "darkevengyl";
     
-    public static $base_path = "/evengyl_framework";
+    public static $base_path = "/sarah_grh";
 
 
     public static $prefix_sql = "";
@@ -42,6 +42,7 @@ class Config
         {
             self::${$row_config_key} = $row_config_values;
         }
+        self::$base = dirname(dirname(dirname(__FILE__)));
     }
 
     public static function get_config_base()
